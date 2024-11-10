@@ -1,4 +1,4 @@
-# GLu
+# GLU
 Gated Linear Unit
 GLU uses a gating mechanism (multiplying input by the sigmoid of the same input), enabling the model to selectively pass information.
 
