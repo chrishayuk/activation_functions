@@ -1,9 +1,11 @@
 # GLU
 Gated Linear Unit
-GLU uses a gating mechanism (multiplying input by the sigmoid of the same input), enabling the model to selectively pass information.
+GLU uses a gating mechanism by multiplying part of the input by the sigmoid of another part of the input, enabling the model to selectively pass information through the gate.
 
 ## Equation
-GLU(x)=(x⋅σ(x))
+For an input vector split into two halves, GLU is defined as: GLU(x)=x1⋅σ(x2)
+
+In LLM's however this is typically the same as swish if input's can't be split, hence why swiglu is mainly used.
 
 ## Pro's
 - Improved Gradient Flow: Helps in mitigating issues like gradient vanishing, especially in RNNs and transformers.
