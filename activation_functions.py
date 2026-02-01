@@ -29,6 +29,26 @@ def swiglu(x):
     # SwiGLU uses Swish as a gate
     return x * swish(x)
 
+def leaky_relu(x, alpha=0.01):
+    # Leaky ReLU: allows small negative slope
+    return np.where(x > 0, x, alpha * x)
 
+def elu(x, alpha=1.0):
+    # Exponential Linear Unit
+    return np.where(x > 0, x, alpha * (np.exp(x) - 1))
 
+def prelu(x, alpha=0.25):
+    # Parametric ReLU: learnable negative slope (alpha is fixed here for demo)
+    return np.where(x > 0, x, alpha * x)
 
+def mish(x):
+    # Mish: x * tanh(softplus(x))
+    return x * np.tanh(np.log(1 + np.exp(x)))
+
+def geglu(x):
+    # GeGLU: x * gelu(x) — GELU-gated linear unit
+    return x * gelu(x)
+
+def telu(x):
+    # TeLU: x * tanh(exp(x))
+    return x * np.tanh(np.exp(x))

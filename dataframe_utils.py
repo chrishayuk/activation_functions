@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
-from activation_functions import relu, glu, swiglu, gelu
+from activation_functions import (
+    relu, glu, swiglu, gelu, silu,
+    leaky_relu, elu, prelu, mish, geglu, telu
+)
 
 def generate_dataframe():
     # Generate input values from -5 to 5
@@ -9,10 +12,17 @@ def generate_dataframe():
     # Creating a table of values for each activation function
     data = {
         "Input": x,
-        "ReLU Output": relu(x),
-        "GLU Output": glu(x),
-        "Swiglu Output": swiglu(x),
-        "GeLU Output": gelu(x)
+        "ReLU": relu(x),
+        "Leaky ReLU": leaky_relu(x),
+        "ELU": elu(x),
+        "PReLU": prelu(x),
+        "GELU": gelu(x),
+        "SiLU": silu(x),
+        "GLU": glu(x),
+        "SwiGLU": swiglu(x),
+        "GeGLU": geglu(x),
+        "Mish": mish(x),
+        "TeLU": telu(x),
     }
 
     # Convert to DataFrame for better readability

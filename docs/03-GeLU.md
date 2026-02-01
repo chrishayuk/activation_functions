@@ -1,4 +1,4 @@
-# GLU
+# GeLU
 Gaussian Error Linear Unit
 
 GeLU introduces a probabilistic gating mechanism inspired by the Gaussian cumulative distribution function (CDF), where each input value is modulated based on the probability of being positive in a Gaussian distribution. This probabilistic approach results in smooth, non-linear activations that improve gradient flow and retain subtle signal variations across transformer layers.

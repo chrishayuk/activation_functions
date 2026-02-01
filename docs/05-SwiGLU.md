@@ -4,9 +4,9 @@ Swish-Gated Linear Unit
 Swiglu combines the Swish activation function with a gating mechanism. It introduces both non-linear and smooth gating, allowing the model to retain more nuanced information, especially in large transformer architectures. Swiglu has been shown to enhance the stability and expressiveness of models by improving gradient flow and information retention.
 
 ## Equation
-GeLU(x)=x⋅Φ(x)
+SwiGLU(x) = x · swish(x) = x · (x · σ(x))
 
-where  Φ(x) represents the cumulative distribution function of a Gaussian distribution.
+where σ(x) is the sigmoid function and swish(x) = x · σ(x).
 
 ## Pro's
 - Smooth and Controlled Gating: Provides smooth, controlled gating with non-linear behavior, which allows Swiglu to pass small signals without harsh suppression.
